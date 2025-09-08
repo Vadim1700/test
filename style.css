@@ -1,43 +1,135 @@
-.product-details {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(51, 153, 255, 0.3);
-}
-
-.price {
-  font-size: 1.2em;
-  color: #3399ff;
-  font-weight: bold;
-}
-
-.back-btn {
-  background-color: #3399ff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+/* Общие стили */
 body {
-  background-color: #e6f2ff;
+  margin: 0;
   font-family: 'Segoe UI', sans-serif;
+  background-color: #e6f2ff;
   color: #003366;
 }
 
+header {
+  background: linear-gradient(to right, #66ccff, #3399ff);
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+/* Сетка товаров */
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Карточка товара */
 .product-card {
   background-color: white;
   border-radius: 10px;
   padding: 15px;
-  margin: 10px;
   box-shadow: 0 4px 8px rgba(51, 153, 255, 0.2);
+  text-align: center;
 }
 
-.view-btn {
+.product-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.product-card h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+/* Кнопки */
+button {
   background: linear-gradient(to right, #66ccff, #3399ff);
   border: none;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1em;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Страница товара */
+#product-details {
+  padding: 20px;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#product-details img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+#detail-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+#detail-description {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+#detail-price {
+  font-size: 1.2em;
+  color: #3399ff;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.order-btn {
+  background-color: #3399ff;
+}
+
+/* 📱 Адаптация под телефон */
+@media (max-width: 600px) {
+  main {
+    grid-template-columns: repeat(2, 1fr); /* сохраняем 2 карточки */
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .product-card h3 {
+    font-size: 1em;
+  }
+
+  button {
+    font-size: 0.9em;
+    padding: 8px 12px;
+  }
+
+  #detail-title {
+    font-size: 1.2em;
+  }
+
+  #detail-description {
+    font-size: 0.95em;
+  }
+
+  #detail-price {
+    font-size: 1.1em;
+  }
 }
