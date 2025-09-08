@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Магазин</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Голубой Магазин</h1>
+  </header>
+
+  <main id="product-list">
+    <div class="product-card">
+      <img src="product1.jpg" alt="Товар 1" />
+      <h3>Товар 1</h3>
+      <button onclick="showDetails('Товар 1', 'Описание товара 1', '199 BYN')">Просмотреть</button>
+    </div>
+
+    <div class="product-card">
+      <img src="product2.jpg" alt="Товар 2" />
+      <h3>Товар 2</h3>
+      <button onclick="showDetails('Товар 2', 'Описание товара 2', '249 BYN')">Просмотреть</button>
+    </div>
+  </main>
+
+  <section id="product-details" style="display: none;">
+    <img id="detail-img" src="trst.jpg" alt="Товар" />
+    <h2 id="detail-title">Название товара</h2>
+    <p id="detail-description">Описание товара</p>
+    <p id="detail-price">Цена: ...</p>
+    <button onclick="goBack()">Назад</button>
+  </section>
+
+  <script>
+    function showDetails(title, description, price) {
+      document.getElementById('product-list').style.display = 'none';
+      document.getElementById('product-details').style.display = 'block';
+      document.getElementById('detail-title').textContent = title;
+      document.getElementById('detail-description').textContent = description;
+      document.getElementById('detail-price').textContent = 'Цена: ' + price;
+    }
+
+    function goBack() {
+      document.getElementById('product-details').style.display = 'none';
+      document.getElementById('product-list').style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
